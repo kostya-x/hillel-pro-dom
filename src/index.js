@@ -23,3 +23,22 @@ function generateList(array) {
 
 document.body.innerHTML += generateList(arr1);
 document.body.innerHTML += generateList(arr2);
+
+let x = 1;
+const $table = document.createElement('table');
+
+// eslint-disable-next-line no-magic-numbers
+for (let i = 0; i < 10; i++) {
+  const $tr = document.createElement('tr');
+  $table.appendChild($tr);
+
+  // eslint-disable-next-line no-magic-numbers
+  for (let j = 0; j < 10; j++) {
+    const $td = document.createElement('td');
+    $td.textContent = x;
+    $tr.appendChild($td);
+    x++;
+  }
+}
+
+document.body.innerHTML += $table.outerHTML;
